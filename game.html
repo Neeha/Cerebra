@@ -26,6 +26,15 @@
    height:60px;   /* Height of the footer */
    background:#6cf;
 }
+.submit{
+  background-color: #26a69a !important;
+}
+.right{
+  background-color: #46904d !important;  
+}
+.wrong{
+  background-color: #cc2b0d !important;  
+}
       </style>
     </head>
 
@@ -59,8 +68,7 @@
                         </div>
                         <div class="col s1 checkanswer">
                           <a class="btn-floating btn-large waves-effect waves-light red">
-                          <i class="material-icons submit">add</i>
-                          <i class="material-icons right" style="display: none;">done</i>
+                          <i class="material-icons submit">done</i>
                           </a>
 
                         </div> 
@@ -144,22 +152,22 @@
           </div>
           <div class="col s6" style="padding-left: 20%">           
               <img style="height: auto;width:400px; padding-top: 4px;" src="img/logo1.png"/>            
-                <!--a class="grey-text text-lighten-4 right" target="_blank" href="http://kurukshetra.org.in">kurukshetra.org.in</a-->
           </div>
           </div>
         </div>
         </footer>
         </div>
-        <script type="text/javascript">
-          $('.checkanswer').click(function() {
-                $(".submit").hide();
-                $(".right").show();
-            });                      
-        </script>
-      <!--Import jQuery before materialize.js-->
+        <!--Import jQuery before materialize.js-->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
       <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script type="text/javascript">
+          $('.checkanswer').click(function() {
+                $('.submit').addClass('wrong');
+                $('.submit').removeClass('submit');
+            });                      
+        </script>
+      
     </body>
   </html>
