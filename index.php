@@ -46,12 +46,12 @@ require 'utils.php';
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
-          <input id="icon_prefix email" type="text" class="validate" onblur="validatemail(this)" required>
+          <input id="email" type="text" class="validate" onblur="validatemail(this)" required>
           <label for="icon_prefix">Email</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">vpn_key</i>
-          <input id="icon_telephone password" type="password" class="validate" onblur="validatepass(this)" required>
+          <input id="password" type="password" class="validate" onblur="validatepass(this)" required>
           <label for="icon_telephone">Password</label>
         </div>
       </div>
@@ -83,6 +83,7 @@ require 'utils.php';
         </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/preround.js"></script>
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
         

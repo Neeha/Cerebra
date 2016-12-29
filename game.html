@@ -64,32 +64,68 @@
                     <div class="input-field col s12" style="margin-top: 36px; color: #fff;">
                       <div class="row">
                         <div class="col s11">
-                          <input placeholder="Your answer" id="first_name2" type="text" class="validate">                      
+                          <input placeholder="Your answer" id="answer1" type="text" class="validate">                      
                         </div>
-                        <div class="col s1 checkanswer">
+                        <div class="col s1" onclick='checkanswer(1,answer1)'>
                           <a class="btn-floating btn-large waves-effect waves-light red">
                           <i class="material-icons submit">done</i>
                           </a>
 
                         </div> 
                       </div>
-                      <label class="active" for="first_name2" style="font-size: 18px;">Question 1</label>
+                      <label class="active" for="Question 1" style="font-size: 18px;">Question 1</label>
                     </div>
                     <div class="input-field col s12">
-                      <input placeholder="Your answer" id="first_name2" type="text" class="validate"><button>SUBMIT</button>
-                      <label class="active" for="first_name2">Question 1</label>
+                      <div class="row">
+                        <div class="col s11">
+                          <input placeholder="Your answer" id="answer2" type="text" class="validate">                      
+                        </div>
+                        <div class="col s1" onclick='checkanswer(2,answer2)'>
+                          <a class="btn-floating btn-large waves-effect waves-light red">
+                          <i class="material-icons submit">done</i>
+                          </a>
+                        </div> 
+                      </div>
+                      <label class="active" for="Question 2" style="font-size: 18px;">Question 2</label>
                     </div>
                     <div class="input-field col s12">
-                      <input placeholder="Your answer" id="first_name2" type="text" class="validate">
-                      <label class="active" for="first_name2">Question 1</label>
+                      <div class="row">
+                        <div class="col s11">
+                          <input placeholder="Your answer" id="answer3" type="text" class="validate">                      
+                        </div>
+                        <div class="col s1" onclick='checkanswer(3,answer3)'>
+                          <a class="btn-floating btn-large waves-effect waves-light red">
+                          <i class="material-icons submit">done</i>
+                          </a>
+                        </div> 
+                      </div>
+                      <label class="active" for="Question 3" style="font-size: 18px;">Question 3</label>
                     </div>
                     <div class="input-field col s12">
-                      <input placeholder="Your answer" id="first_name2" type="text" class="validate">
-                      <label class="active" for="first_name2">Question 1</label>
+                      <div class="row">
+                        <div class="col s11">
+                          <input placeholder="Your answer" id="answer4" type="text" class="validate">                      
+                        </div>
+                        <div class="col s1" onclick='checkanswer(4,answer4)'>
+                          <a class="btn-floating btn-large waves-effect waves-light red">
+                          <i class="material-icons submit">done</i>
+                          </a>
+                        </div> 
+                      </div>
+                      <label class="active" for="Question 4" style="font-size: 18px;">Question 4</label>
                     </div>
                     <div class="input-field col s12">
-                      <input placeholder="Your answer" id="first_name2" type="text" class="validate">
-                      <label class="active" for="first_name2">Question 1</label>
+                      <div class="row">
+                        <div class="col s11">
+                          <input placeholder="Your answer" id="answer5" type="text" class="validate">                      
+                        </div>
+                        <div class="col s1" onclick='checkanswer(5,answer5)'>
+                          <a class="btn-floating btn-large waves-effect waves-light red">
+                          <i class="material-icons submit">done</i>
+                          </a>
+                        </div> 
+                      </div>
+                      <label class="active" for="Question 5" style="font-size: 18px;">Question 5</label>
                     </div>
                     </div>
                 <a class="btn" style="margin-left:50%; margin-bottom: 1%;" onclick="Materialize.toast('Please fill all the answers', 4000)">SUBMIT</a>
@@ -162,12 +198,14 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
       <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-        <script type="text/javascript">
+      <script src="js/preround.js"></script>
+        <!--script type="text/javascript">
           $('.checkanswer').click(function() {
-                $('.submit').addClass('wrong');
-                $('.submit').removeClass('submit');
+                checkanswer_preround(answer1);
+                // $('.submit').addClass("wrong");
+                //Materialize.toast('Wrong answer:( Try again', 4000)
+                //$('.submit').removeClass("wrong", 2000);
             });                      
-        </script>
-      
+        </script-->
     </body>
   </html>
