@@ -46,12 +46,12 @@ require 'utils.php';
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
-          <input id="icon_prefix email" type="text" class="validate" onblur="validatemail(this)" required>
+          <input id="icon_prefix email" type="text" name="email" class="validate" onblur="validatemail(this)" required>
           <label for="icon_prefix">Email</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">vpn_key</i>
-          <input id="icon_telephone password" type="password" class="validate" onblur="validatepass(this)" required>
+          <input id="icon_telephone password" type="password" name="password" class="validate" onblur="validatepass(this)" required>
           <label for="icon_telephone">Password</label>
         </div>
       </div>

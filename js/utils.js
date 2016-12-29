@@ -14,31 +14,16 @@ $("#login_form").submit(function(e) {
             dataType: "json",
             success: function(result)
             {
-                if(result.response!=0)
+                if(result == 1)
                 {
-                 //   $('#login_link').remove();
-                  //  $('#register_as_new_sa').remove();
-                   // $('.login').modal('toggle');
-                    /*BootstrapDialog.show({
-                        title: 'Hey '+result.name+' 😁',
-                        message: 'Successfully logged in!',
-                        type: BootstrapDialog.TYPE_SUCCESS,
-                        closable: true,
-                        draggable: true
-                    });*/
                     alert("success");
                 }
+                else
+                    alert("failure");
                 
             },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-               /*BootstrapDialog.show({
-                title: 'Oops!',
-                message: 'Some error occured 😪 <br/> Please try after refreshing',
-                type: BootstrapDialog.TYPE_DANGER,
-                closable: true,
-                draggable: true
-                });  */   
-                alert('failure');          
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert('error');          
             }
         });
         $('.progress_loader').hide();
