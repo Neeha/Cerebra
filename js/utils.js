@@ -1,4 +1,4 @@
- 
+
 // handle login
 $("#login_form").submit(function(e) { 
     $('.progress_loader').show();
@@ -17,18 +17,7 @@ $("#login_form").submit(function(e) {
                 if(result == 1)
                 {
                     alert("success");
-                    window.open("game.html","_self");
-                    alert("hey");
-                    $.ajax
-                    ({
-                        url: 'prerun.php',
-                        type: 'post',                        
-                        dataType: "json",
-                        success: function(msg)
-                        {
-                            
-                        }
-                    });
+                    window.location="prerun.php";
                 }
                 else
                     alert("failure");

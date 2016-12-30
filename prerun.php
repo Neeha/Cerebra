@@ -1,13 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['user']))
+if(isset($_SESSION['user']))
 {
-	$emailId = sanitizeParams($_POST['email']);
+	$emailId = $_SESSION['user']['emailId'];
 	
 	$url = 'cms.cegtechforum.com/api/practice';
 	$params =  json_encode(array(
-		"question" => $question, 
-		"key" => $key
+		"emailId" => $emailId
 		));
 	$ch = curl_init( $url );
 	curl_setopt( $ch, CURLOPT_POST, 1);
@@ -21,13 +20,14 @@ if(!isset($_SESSION['user']))
 	if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200)
 	{
 		$response = json_decode($response, true);
-		$_SESSION['user'] = $response;
-		echo 1;
+		$_SESSION['practice'] = $response['data'];
+		//print_r($_SESSION['practice']);
+		//header("Location: practice.php");
 
 	}
 	else
 	{
-		echo 0;
+		header("Location: index.php");
 	}
 	
 	//header("Location: index.php");
