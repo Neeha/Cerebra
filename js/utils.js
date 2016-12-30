@@ -17,6 +17,18 @@ $("#login_form").submit(function(e) {
                 if(result == 1)
                 {
                     alert("success");
+                    window.open("game.html","_self");
+                    alert("hey");
+                    $.ajax
+                    ({
+                        url: 'prerun.php',
+                        type: 'post',                        
+                        dataType: "json",
+                        success: function(msg)
+                        {
+                            
+                        }
+                    });
                 }
                 else
                     alert("failure");
@@ -44,4 +56,4 @@ $("#login_form").submit(function(e) {
     e.preventDefault();
 });
 
-
+// pre run fetching questions
