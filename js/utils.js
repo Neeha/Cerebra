@@ -17,7 +17,7 @@ $("#login_form").submit(function(e) {
                 if(result == 1)
                 {
                     alert("success");
-                    window.location="prerun.php";
+                    window.location="practice.php";
                 }
                 else
                     alert("failure");
