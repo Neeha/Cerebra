@@ -72,13 +72,14 @@ require 'prerun.php';
                     <div class="input-field col s12" style="margin-top: 36px; color: #fff;">                      
                       <div class="row">
                         <div class="col s11">
-                          <input placeholder="Your answer"  id="ans<?php echo $i ?>" type="text" >
+                        <form id="ans1">
+                          <input placeholder="Your answer" id="ans" type="text" onclick="answers(this)">
+                        </form>
                         </div>
-                        <div class="col s1 prac_checkans<?php echo $i ?>">
+                        <div class="col s1 prac_checkans">
                           <a class="btn-floating btn-large waves-effect waves-light red">
                           <i class="material-icons submit">done</i>
                           </a>
-
                         </div> 
                       </div>
                       <label class="active" for="q1" style="font-size: 18px;">
@@ -177,13 +178,14 @@ require 'prerun.php';
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
       <!--script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-        <script type="text/javascript">
+      <script type="text/javascript" src="js/utils.js"></script>
+        <!--script type="text/javascript">
           $('.checkanswer').click(function() {
                 $('.submit').addClass('wrong');
                 $('.submit').removeClass('submit');
             });  
             //loadpreround();                    
-        </script>
+        </script-->
       
     </body>
   </html>

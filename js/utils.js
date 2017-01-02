@@ -45,4 +45,35 @@ $("#login_form").submit(function(e) {
     e.preventDefault();
 });
 
+// practice round - validation answers
+
+$(".prac_checkans").click(function() { 
+        alert("click");
+        $.ajax
+        ({ 
+            url: 'login.php',
+            data: $("#ans1").serialize(),
+            type: 'post',
+            dataType: "json",
+            success: function(result)
+            {
+                if(result == 1)
+                {
+                    alert("success");
+                   // window.location="practice.php";
+                }
+                else
+                    alert("failure");
+                
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                alert('error');          
+            }
+        });
+        $('.progress_loader').hide();
+        $('.login_submit').show();
+    
+    e.preventDefault();
+});
+
 // pre run fetching questions

@@ -4,7 +4,7 @@ if(isset($_SESSION['user']))
 {
 	$emailId = $_SESSION['user']['emailId'];
 	
-	$url = 'cms.cegtechforum.com/api/practice';
+	$url = 'cms.cegtechforum.com/api/submit';
 	$params =  json_encode(array(
 		"emailId" => $emailId
 		));
