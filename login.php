@@ -23,7 +23,12 @@ if(!isset($_SESSION['user']))
 	{
 		$response = json_decode($response, true);
 		$_SESSION['user'] = $response;
-		echo 1;
+		if ($response['state'] == 0)
+			echo 1;
+		else if ($response['state'] < 5)
+			echo 2;
+		else 
+			echo 3;
 
 	}
 	else
@@ -38,7 +43,7 @@ if(!isset($_SESSION['user']))
 }
 else
 {
-	echo 3;
+	echo 4;
 }
 
 function sanitizeParams($param)

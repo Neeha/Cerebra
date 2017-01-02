@@ -19,6 +19,10 @@ $("#login_form").submit(function(e) {
                     alert("success");
                     window.location="practice.php";
                 }
+                else if(result == 2)
+                {
+                    //main event
+                }
                 else
                     alert("failure");
                 
@@ -47,33 +51,27 @@ $("#login_form").submit(function(e) {
 
 // practice round - validation answers
 
-$(".prac_checkans").click(function() { 
-        alert("click");
-        $.ajax
-        ({ 
-            url: 'login.php',
-            data: $("#ans1").serialize(),
-            type: 'post',
-            dataType: "json",
-            success: function(result)
-            {
-                if(result == 1)
-                {
-                    alert("success");
-                   // window.location="practice.php";
-                }
-                else
-                    alert("failure");
-                
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                alert('error');          
-            }
-        });
-        $('.progress_loader').hide();
-        $('.login_submit').show();
-    
-    e.preventDefault();
-});
+function submitAnswer(e) { 
+    answer = document.getElementById('answer_'+e.id).value;
+    $.ajax
+    ({ 
+        url: 'submit.php',
+        data: 'key=' + e.id + '&answer=' + answer,
+        type: 'post',
+        dataType: "json",
+        success: function(result)
+        {
+            if(result['code']==1)
+                Materialize.toast('Right Answer!', 4000);
+            else if(result['code']==0)
+                Materialize.toast('Dai thappudaa!', 4000);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert('error');          
+        }
+    });
+    $('.progress_loader').hide();
+    $('.login_submit').show();
+}
 
 // pre run fetching questions
