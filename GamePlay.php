@@ -14,6 +14,7 @@ if(isset($_SESSION['user']))
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
       <link rel='stylesheet' href="css/progress_loader.css">
+	  <link rel='stylesheet' href="css/scroll.css">
       <!--Let browser know website is optimized for mobile-->
       <link href='//fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
       <link href='//fonts.googleapis.com/css?family=Merienda One' rel='stylesheet'>
@@ -53,10 +54,12 @@ if(isset($_SESSION['user']))
           .contents
           {
             font-size:14px;
+			max-height:150px;
           }
           .card-content
           {
             padding-bottom: 210px !important;
+			height:290px;
           }
           .carousel .indicators
           {
@@ -68,12 +71,15 @@ if(isset($_SESSION['user']))
           .contents
           {
             font-size:18px;
+			max-height:100px;
           }
           .card-content
           {
             padding-bottom: 110px !important;
+			height:210px;
           }
         }
+		
         .footer {
   position: absolute;
   right: 0;
@@ -103,8 +109,8 @@ if(isset($_SESSION['user']))
       </div>
     </nav>
 
-    <div class="row" style="padding-top:20px;">
-              <ul class="tabs" style="font-family: Roboto Slab">
+    <div class="row" style="padding-top:10px;">
+              <ul class="tabs" style="font-family: Roboto Slab; white-space:normal;">
                 <li class="tab col s12 l4"><a class="active" href="#game" style="font-size:18px" >Game Play</a></li>
                 <li class="tab col s12 l4"><a href="#rules" style="font-size:18px">Rules</a></li>
                 <li class="tab col s12 l4"><a href="#format" style="font-size:18px">Format</a></li>
@@ -112,7 +118,7 @@ if(isset($_SESSION['user']))
               </ul>
 
     <div id="game">
-    <div class="container">
+    <div class="container" style="padding-top:1px;">
 
      <br/><br/><br/>
      <div class="carousel carousel-slider center" data-indicators="true">
@@ -131,14 +137,14 @@ if(isset($_SESSION['user']))
       <div class="carousel-item grey lighten-5 white-text" href="#one!" style="height: 400px;">
 
         <div class="card hoverable grey lighten-4">
-              <div class="card-content" style="padding-bottom: 110px;">
+              <div class="card-content">
 
-                <div class="col s12 contents" style="margin-left:5px;color: black;overflow-y: auto;"><?php echo $question['question'] ?></div>
+                <div class="col s12 contents" style="margin-left:5px;color: black;overflow:auto;"><?php echo $question['question'] ?></div>
      
                 <br/><br/>
-                <div class="input-field col s12" style="margin-top:0px; margin-left:15px; margin-right: 15px;">
+                <div class="input-field col s12" style="margin-top:0px;">
 
-                  <div class="col s12 m8">
+                  <div class="col s12 m9">
                     <i class="material-icons prefix" style="color:black;">mode_edit</i>
                     <input type="text" placeholder="Your answer" id="answer_<?php echo $question['key'] ?>" class="validate" style="color:black;" value="<?php
                       if(isset($_SESSION['answers'][$question['key']]))
@@ -148,8 +154,8 @@ if(isset($_SESSION['user']))
                      
                     ?>"/>
                   </div>
-                  <div class="col s12 m4">
-                    <a class="btn-floating btn-large waves-effect waves-light" style="margin-left:5%; margin-bottom: 1%; background-color:#39a558;" id="<?php echo $question['key'] ?>" onclick="submitAnswer(this);"><i class="material-icons">done</i></a>
+                  <div class="col s12 m3">
+                    <a class="btn-floating btn-large waves-effect waves-light" style="margin-left:5%; margin-bottom: 1%; background-color:#39a558; width:40px;height:40px;" id="<?php echo $question['key'] ?>" onclick="submitAnswer(this);"><i class="material-icons" style="line-height:40px;">done</i></a>
                     <!-- <a class="waves-effect waves-light btn" style="margin-bottom: 1%; background-color:#39a558;" id="<?php echo $question['key'] ?>" onclick="submitAnswer(this);">submit</a> -->
                     <div class="progress_loader" id="pl_<?php echo $question['key'] ?>" style="display:none;">Loading...</div>
                   </div>  
