@@ -15,7 +15,7 @@ if(isset($_SESSION['user']))
 
       <link rel='stylesheet' href="css/progress_loader.css">
       <!--Let browser know website is optimized for mobile-->
-      <link href='//fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
+      <link href='//fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
       <link href='//fonts.googleapis.com/css?family=Merienda One' rel='stylesheet'>
       <link href='//fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

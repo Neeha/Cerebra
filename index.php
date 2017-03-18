@@ -17,7 +17,7 @@ if (!isset($_SESSION['user']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Let browser know website is optimized for mobile-->
 
-    <link href='//fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Patua One' rel='stylesheet'>
     <link href='//fonts.googleapis.com/css?family=Merienda One' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style type="text/css">
@@ -29,7 +29,15 @@ if (!isset($_SESSION['user']))
         color:    red;
         opacity: 0.2 !important;
       }
-
+      .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #00796b;
+  text-align: center;
+}
 
     </style>
   </head>
@@ -52,7 +60,7 @@ if (!isset($_SESSION['user']))
   </nav>
   <div class="container center" style="margin-top: 5vh; margin-bottom: 10vh; min-width: 200px">
   <br/><br/><br/>
-  <h2>THE BEAUTIFUL MIND</h2>
+  <h2 style="font-family: Patua One">THE BEAUTIFUL MIND</h2>
   <hr>
   <h4>Code your mind out!!</h4>
     <div class="section">
@@ -65,6 +73,7 @@ if (!isset($_SESSION['user']))
    </div>
  </div>
 </div>
+<div class="footer">Copyright 2017 @ CSEA. All rights reserved.</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
