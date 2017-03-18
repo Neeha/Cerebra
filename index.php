@@ -104,8 +104,6 @@ if (!isset($_SESSION['user']))
             if(result == 1)
             {
                 Materialize.toast('Login Successful 😎', 1000);
-                //window.location.href= "practice.php";
-                //window.open("practice.php","_self")
             }
             else
             {
@@ -119,7 +117,7 @@ if (!isset($_SESSION['user']))
 }  
     function fetchUserDetail()
     {
-        window.open('/Cerebra/practice.php','_self');
+        window.open('./practice.php','_self');
         FB.api('/me', {"fields":"id,name,email,first_name,last_name"}, function(response) {
                 //alert("Name: "+ response.name + "ID: "+response.id + "\nEmail: "+ response.email);
                 //console.log(response.id);
