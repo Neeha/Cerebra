@@ -3,14 +3,10 @@ session_start();
 if(isset($_SESSION['user']))
 {
 	$access_token = $_SESSION['user']['access_token'];
-	$key = sanitizeParams($_POST['key']);
-	$answer = sanitizeParams($_POST['answer']);
 	
-	$url = 'cms16.kurukshetra.org.in/api/submit';
+	$url = 'cms.cegtechforum.com/api/myState';
 	$params =  json_encode(array(
-		"access_token" => $access_token,
-		'key' => $key,
-		'answer' => $answer
+		"access_token" => $access_token
 		));
 	$ch = curl_init( $url );
 	curl_setopt( $ch, CURLOPT_POST, 1);
@@ -23,17 +19,18 @@ if(isset($_SESSION['user']))
 	$response = curl_exec( $ch );
 	if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200)
 	{
-		echo 1;
+		echo $response;
 	}
 	else
 	{
 		echo 0;
 	}
 	
+	//header("Location: index.php");
 }
 else
 {
-	echo 3;
+	echo 4;
 }
 
 function sanitizeParams($param)
@@ -45,7 +42,8 @@ function sanitizeParams($param)
 	}
 	else
 	{
-		return "";
+		$_SESSION['login'] = "failure";
+			//header("Location: index.php");
 	}
 }
 

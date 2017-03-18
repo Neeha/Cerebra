@@ -1,16 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION['user']))
-{
-	$access_token = $_SESSION['user']['access_token'];
-	$key = sanitizeParams($_POST['key']);
-	$answer = sanitizeParams($_POST['answer']);
+$access_token = $_SESSION['user']['access_token'];
 	
-	$url = 'cms16.kurukshetra.org.in/api/submit';
+	$url = 'cms16.kurukshetra.org.in/api/getQuestions';
 	$params =  json_encode(array(
-		"access_token" => $access_token,
-		'key' => $key,
-		'answer' => $answer
+		"access_token" => $access_token
 		));
 	$ch = curl_init( $url );
 	curl_setopt( $ch, CURLOPT_POST, 1);
@@ -23,19 +17,10 @@ if(isset($_SESSION['user']))
 	$response = curl_exec( $ch );
 	if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200)
 	{
-		echo 1;
-	}
-	else
-	{
-		echo 0;
-	}
-	
-}
-else
-{
-	echo 3;
-}
+		$response = json_decode($response, true);
+		$_SESSION['questions'] = $response['data'];
 
+	}	
 function sanitizeParams($param)
 {
 	$param = strip_tags(trim($param));
@@ -45,7 +30,7 @@ function sanitizeParams($param)
 	}
 	else
 	{
-		return "";
+		//handle else case
 	}
 }
 
