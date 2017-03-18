@@ -3,29 +3,36 @@ function submitAnswer(e) {
     $(e).hide();
     $(document.getElementById('pl_'+e.id)).show();
     answer = document.getElementById('answer_'+e.id).value;
-    $.ajax
-    ({ 
-        url: 'submit.php',
-        data: 'key=' + e.id + '&answer=' + answer,
-        type: 'post',
-        dataType: "json",
-        success: function(result)
-        {
-            if(result == 1)
+    if(answer == "")
+    {
+        Materialize.toast('', 1000);
+    }
+    else
+    {
+        $.ajax
+        ({ 
+            url: 'submit.php',
+            data: 'key=' + e.id + '&answer=' + answer,
+            type: 'post',
+            dataType: "json",
+            success: function(result)
             {
-                Materialize.toast('Submitted Successfully 😎', 1000);
+                if(result == 1)
+                {
+                    Materialize.toast('Submitted Successfully 😎', 1000);
+                }
+                else
+                {
+                    Materialize.toast('Try submitting again', 1000);   
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                Materialize.toast('Some error occured. Please try after sometime 🙏', 1000);
+                $(document.getElementById('pl_'+e.id)).hide();
+                $(e).show();
             }
-            else
-            {
-                Materialize.toast('Try submitting again', 1000);   
-            }
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            Materialize.toast('Some error occured. Please try after sometime 🙏', 1000);
-            $(document.getElementById('pl_'+e.id)).hide();
-            $(e).show();
-        }
-    });
+        });
+    }
     $(document.getElementById('pl_'+e.id)).hide();
     $(e).show();
 }

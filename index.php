@@ -117,7 +117,7 @@ if (!isset($_SESSION['user']))
 }  
     function fetchUserDetail()
     {
-        window.open('./practice.php','_self');
+        window.open('./GamePlay.php','_self');
         FB.api('/me', {"fields":"id,name,email,first_name,last_name"}, function(response) {
                 //alert("Name: "+ response.name + "ID: "+response.id + "\nEmail: "+ response.email);
                 //console.log(response.id);
@@ -152,21 +152,6 @@ if (!isset($_SESSION['user']))
 }
 else
 {
-  switch ($_SESSION['user']['state']) {
-    case 0:
-      # go to practice page
-    header("Location: practice.php");
-    break;
-
-    case 5:
-      # go to summary page
-    header("Location: Summary.php");
-    break;
-    
-    default:
-      # go to game play
-    header("Location: GamePlay.php");
-    break;
-  }
+    header("Location: GamePlay.php");  
 }
 ?>

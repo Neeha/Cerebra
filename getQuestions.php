@@ -19,6 +19,7 @@ $access_token = $_SESSION['user']['access_token'];
 	{
 		$response = json_decode($response, true);
 		$_SESSION['questions'] = $response['data'];
+		$_SESSION['answers'] = $response['answers'];
 
 	}	
 function sanitizeParams($param)
