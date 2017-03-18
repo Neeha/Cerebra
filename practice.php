@@ -162,7 +162,7 @@ if(isset($_SESSION['user']))
      </div> 
 </div>
      <div id="rules" class="col s12" style="padding-top: 40px; padding-left: 15%;">
-          <ul style="line-height: 25px; list-style-type: circle; font-family: Merienda One;">
+          <ul style="line-height: 25px; list-style-type: circle;">
                 <li>1.  All participants must have a valid Abacus ID</li>
                 <li>2.  Only individual participation is allowed</li>
                 <li>3.  Be choosy. The questions carry different weightage.</li>
@@ -172,7 +172,7 @@ But the final answer submitted  would be taken for consideration.</li>
               </ul>
       </div>
       <div id="format" style="padding-top: 40px; padding-left: 15%;">
-              <ul style="line-height: 25px; list-style-type: circle; font-family: Merienda One;">
+              <ul style="line-height: 25px; list-style-type: circle;">
                 <li>1.  A single round of 25 questions.</li>
                 <li>2.  The event would go on from 9pm to 11 pm on March 19,2017</li>                
               </ul>
