@@ -17,6 +17,7 @@ if(isset($_SESSION['user']))
       <!--Let browser know website is optimized for mobile-->
       <link href='//fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
       <link href='//fonts.googleapis.com/css?family=Merienda One' rel='stylesheet'>
+      <link href='//fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style type="text/css">
         ::-webkit-input-placeholder { /* WebKit browsers */
@@ -43,6 +44,32 @@ if(isset($_SESSION['user']))
         {
           background-color: grey !important;
         }
+        @media screen and (max-width: 700px)
+        {
+          .heading
+          {
+            display: none;
+          }
+          .contents
+          {
+            font-size:14px;
+          }
+          .card-content
+          {
+            padding-bottom: 210px !important;
+          }
+        }
+        @media screen and (min-width: 700px)
+        {
+          .contents
+          {
+            font-size:18px;
+          }
+          .card-content
+          {
+            padding-bottom: 110px !important;
+          }
+        }
         .footer {
   position: absolute;
   right: 0;
@@ -57,19 +84,25 @@ if(isset($_SESSION['user']))
 
     <body>    
      <nav class="top-nav teal darken-2" style="height: 80px">
-      <div class="nav-wrapper">
-        <a href="//kurukshetra.org.in" class="left"><img class="responsive-img" src="img/k_logo.png" style="width: 200px"></a>
-        <a href=""></a>
-        <a class="brand-logo right" href="logout.php" style="padding-top: 10px" >
+      <div class="nav-wrapper row">
+        <div class="col m2 s6">
+        <a href="//kurukshetra.org.in" class="left"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
+        </div>
+        <div class="col m8 s12 heading">
+        <center><a href="#" style="font-size: 40px; font-family: Roboto Slab">THE BEAUTIFUL MIND</a></center>
+        </div>
+        <div class="col m2 s6">
+        <a class="brand-logo right" href="logout.php" >
           <i class="large material-icons">power_settings_new</i>
         </a>    
-
+        </div>
       </div>
     </nav>
+
     <div class="row" style="padding-top:20px;">
-              <ul class="tabs" >
+              <ul class="tabs" style="font-family: Roboto Slab">
                 <li class="tab col s12 l4"><a class="active" href="#game" style="font-size:18px" >Game Play</a></li>
-                <li class="tab col s12 l4"><a href="#rules" style="font-size:18px" onclick="getLeaderboard();">Rules</a></li>
+                <li class="tab col s12 l4"><a href="#rules" style="font-size:18px">Rules</a></li>
                 <li class="tab col s12 l4"><a href="#format" style="font-size:18px">Format</a></li>
 
               </ul>
@@ -85,16 +118,18 @@ if(isset($_SESSION['user']))
 
 
     <?php
-    
+    $i=0;
     foreach ($_SESSION['questions'] as $question) {
-
+      if($i<20)
+      {
+        $i = $i+1;
       ?>
       <div class="carousel-item grey lighten-5 white-text" href="#one!" style="height: 400px;">
 
         <div class="card hoverable grey lighten-4">
               <div class="card-content" style="padding-bottom: 110px;">
 
-                <div class="col s12" style="font-size:18px;margin-left:5px;color: black;"><?php echo $question['question'] ?></div>
+                <div class="col s12 contents" style="margin-left:5px;color: black;"><?php echo $question['question'] ?></div>
      
                 <br/><br/>
                 <div class="input-field col s12" style="margin-top:0px; margin-left:15px; margin-right: 15px;">
@@ -121,12 +156,13 @@ if(isset($_SESSION['user']))
     </div>
     <?php
     }
+  }
     ?>
   </div>
      </div> 
 </div>
-     <div id="rules" class="col s12" style="padding-top: 40px; padding-left: 20%;">
-          <ul style="line-height: 25px; list-style-type: circle;">
+     <div id="rules" class="col s12" style="padding-top: 40px; padding-left: 15%;">
+          <ul style="line-height: 25px; list-style-type: circle; font-family: Merienda One;">
                 <li>1.  All participants must have a valid Abacus ID</li>
                 <li>2.  Only individual participation is allowed</li>
                 <li>3.  Be choosy. The questions carry different weightage.</li>
@@ -135,8 +171,8 @@ if(isset($_SESSION['user']))
 But the final answer submitted  would be taken for consideration.</li>                
               </ul>
       </div>
-      <div id="format" style="padding-top: 40px; padding-left: 20%;">
-              <ul style="line-height: 25px; list-style-type: circle;">
+      <div id="format" style="padding-top: 40px; padding-left: 15%;">
+              <ul style="line-height: 25px; list-style-type: circle; font-family: Merienda One;">
                 <li>1.  A single round of 25 questions.</li>
                 <li>2.  The event would go on from 9pm to 11 pm on March 19,2017</li>                
               </ul>
