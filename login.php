@@ -48,7 +48,7 @@ else
 
 function sanitizeParams($param)
 {
-	$param = strip_tags(trim($param));
+	//$param = strip_tags(trim($param));
 	if (isset($param) && empty($param) != 1)
 	{
 		return $param;	
