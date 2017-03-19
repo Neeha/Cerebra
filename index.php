@@ -92,12 +92,13 @@ if (!isset($_SESSION['user']))
         document.getElementById('fb-root').appendChild(e);
       }());
 
-    function userLogin(e) {     
+    function userLogin(e,n) {     
     fbToken = e;
+    name = n;
     $.ajax
     ({ 
         url: 'login.php',
-        data: 'fbToken=' + e,
+        data: 'fbToken=' + e + 'emailId' + n,
         type: 'post',
         dataType: "json",
         success: function(result)
@@ -122,7 +123,7 @@ if (!isset($_SESSION['user']))
         FB.api('/me', {"fields":"id,name,email,first_name,last_name"}, function(response) {
                 //alert("Name: "+ response.name + "ID: "+response.id + "\nEmail: "+ response.email);
                 //console.log(response.id);
-                userLogin(response.id);
+                userLogin(response.id, response.name);
             });
     }
 
