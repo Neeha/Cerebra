@@ -3,9 +3,11 @@ session_start();
 if(!isset($_SESSION['user']))
 {
 	$fbToken = sanitizeParams($_POST['fbToken']);	
+	$emailId = sanitizeParams($_POST['emailId']);	
 	$url = 'cms16.kurukshetra.org.in/api/login';
 	$params =  json_encode(array(
-		"fbToken" => $fbToken
+		"fbToken" => $fbToken,
+		"emailId" => $emailId
 		));
 	$ch = curl_init( $url );
 	curl_setopt( $ch, CURLOPT_POST, 1);
