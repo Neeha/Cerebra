@@ -91,7 +91,7 @@ if(isset($_SESSION['user']))
      <nav class="top-nav teal darken-2" style="height: 80px">
       <div class="nav-wrapper row">
         <div class="col m2 s6">
-        <a href="//kurukshetra.org.in" class="left"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
+        <a href="//abacus.org.in" class="left"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
         </div>
         <div class="col m8 s12 heading">
         <center><a href="#" style="font-size: 40px; font-family: Roboto Slab">THE BEAUTIFUL MIND</a></center>
@@ -199,7 +199,10 @@ But the final answer submitted  would be taken for consideration.</li>
         {
           Materialize.toast('Swipe left to view other questions', 3000);  
         }        
-
+        else
+        {
+        Materialize.toast('Click the dots below to view other questions', 3000);  
+        }
       }, 7000);
       // Materialize.toast('Swipe left to view all the questions', 10000);
     });

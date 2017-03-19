@@ -3,9 +3,11 @@ session_start();
 if(!isset($_SESSION['user']))
 {
 	$fbToken = sanitizeParams($_POST['fbToken']);	
+	$emailId = sanitizeParams($_POST['emailId']);	
 	$url = 'cms16.kurukshetra.org.in/api/login';
 	$params =  json_encode(array(
-		"fbToken" => $fbToken
+		"fbToken" => $fbToken,
+		"emailId" => $emailId
 		));
 	$ch = curl_init( $url );
 	curl_setopt( $ch, CURLOPT_POST, 1);
@@ -16,8 +18,10 @@ if(!isset($_SESSION['user']))
 	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 	
 	$response = curl_exec( $ch );
+	//console.log(response);
 	if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200)
 	{
+	//	print_r("true");
 		$response = json_decode($response, true);
 		$_SESSION['user'] = $response;
 		echo 1;
@@ -32,6 +36,7 @@ if(!isset($_SESSION['user']))
 	else
 	{
 		echo 0;
+		print_r("true");
 	}
 	
 	//header("Location: index.php");
@@ -46,7 +51,7 @@ else
 
 function sanitizeParams($param)
 {
-	$param = strip_tags(trim($param));
+//	$param = strip_tags(trim($param));
 	if (isset($param) && empty($param) != 1)
 	{
 		return $param;	
