@@ -91,7 +91,7 @@ if(isset($_SESSION['user']))
      <nav class="top-nav teal darken-2" style="height: 80px">
       <div class="nav-wrapper row">
         <div class="col m2 s6">
-        <a href="//kurukshetra.org.in" class="left"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
+        <a href="//abacus.org.in" class="left"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
         </div>
         <div class="col m8 s12 heading">
         <center><a href="#" style="font-size: 40px; font-family: Roboto Slab">THE BEAUTIFUL MIND</a></center>
@@ -178,7 +178,7 @@ But the final answer submitted  would be taken for consideration.</li>
       <div id="format" style="padding-top: 40px; padding-left: 15%;">
               <ul style="line-height: 25px; list-style-type: circle;">
                 <li>1.  A single round of 25 questions.</li>
-                <li>2.  The event would go on from 9pm to 11 pm on March 19,2017</li>                
+                <li>2.  The duration of the event is 1 hour 30 minutes.</li>                
               </ul>
     </div>
 
