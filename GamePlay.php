@@ -32,11 +32,6 @@ if(isset($_SESSION['user']))
         .gotomain a:hover{
             color: #000!important;
         }
-        .carousel-item{
-          padding-left: 7%;
-          padding-top: 7%;
-          padding-right: 7%;
-        }
         .carousel .indicators .indicator-item.active
         {
           background-color: black !important;
@@ -54,7 +49,7 @@ if(isset($_SESSION['user']))
           .contents
           {
             font-size:14px;
-			max-height:150px;
+			max-height:220px;
           }
           .card-content
           {
@@ -70,8 +65,8 @@ if(isset($_SESSION['user']))
         {
           .contents
           {
-            font-size:18px;
-			max-height:100px;
+            font-size:16px;
+			max-height:250px;
           }
           .card-content
           {
@@ -120,7 +115,7 @@ if(isset($_SESSION['user']))
     <div id="game">
     <div class="container" style="padding-top:1px;">
 
-     <br/><br/><br/>
+     <br/>
      <div class="carousel carousel-slider center" data-indicators="true">
     <?php
       $colors = array("blue","red","green","purple","orange");
@@ -136,7 +131,7 @@ if(isset($_SESSION['user']))
       ?>
       <div class="carousel-item grey lighten-5 white-text" href="#one!" style="height: 400px;">
 
-        <div class="card hoverable grey lighten-4">
+        <div class="card hoverable grey lighten-4" style="height: 400px;">
               <div class="card-content">
 
                 <div class="col s12 contents" style="margin-left:5px;color: black;overflow:auto;"><?php echo $question['question'] ?></div>
