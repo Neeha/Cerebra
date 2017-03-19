@@ -105,6 +105,7 @@ if (!isset($_SESSION['user']))
         {
             if(result == 1)
             {
+	        window.open('./GamePlay.php','_self');
                 Materialize.toast('Login Successful 😎', 1000);
             }
             else
@@ -119,7 +120,7 @@ if (!isset($_SESSION['user']))
 }  
     function fetchUserDetail()
     {
-        window.open('./GamePlay.php','_self');
+        
         FB.api('/me', {"fields":"id,name,email,first_name,last_name"}, function(response) {
                 //alert("Name: "+ response.name + "ID: "+response.id + "\nEmail: "+ response.email);
                 //console.log(response.id);
