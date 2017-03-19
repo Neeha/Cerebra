@@ -54,7 +54,7 @@ if (!isset($_SESSION['user']))
 }(document, 'script', 'facebook-jssdk'));</script> -->
    <nav class="top-nav teal darken-2" style="height: 80px">
     <div class="nav-wrapper">
-      <a href="//kurukshetra.org.in" class="brand-logo"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
+      <a href="//abacus.org.in" class="brand-logo"><img class="responsive-img" src="img/abacus mouse_PNG.png" style="width: 85px; padding-top: 10px;"></a>
       <a href="#" class="brand-logo right hide-on-med-and-down" style="padding-top: 20px"><img class="responsive-img" src="img/ceg.png" style="width: 200px"></a>
 
     </div>
