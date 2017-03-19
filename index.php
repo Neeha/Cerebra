@@ -98,7 +98,7 @@ if (!isset($_SESSION['user']))
     $.ajax
     ({ 
         url: 'login.php',
-        data: 'fbToken=' + e + 'emailId' + n,
+        data: 'fbToken=' + e + '&emailId=' + n,
         type: 'post',
         dataType: "json",
         success: function(result)
