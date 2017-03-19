@@ -82,7 +82,7 @@ if (!isset($_SESSION['user']))
 <script>
 
       window.fbAsyncInit = function() {
-          FB.init({appId: '1157728337598478', status: true, cookie: true, xfbml: true});
+          FB.init({appId: '110436059492994', status: true, cookie: true, xfbml: true});
 
       };
       (function() {
@@ -92,7 +92,7 @@ if (!isset($_SESSION['user']))
         document.getElementById('fb-root').appendChild(e);
       }());
 
-    function userLogin(e,n) {         
+    function userLogin(e,n) {     
     $.ajax
     ({ 
 

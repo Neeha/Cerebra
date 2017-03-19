@@ -215,3 +215,4 @@ But the final answer submitted  would be taken for consideration.</li>
  {
   header("Location: index.php");
  }
+ ?>
