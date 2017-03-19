@@ -199,7 +199,7 @@ But the final answer submitted  would be taken for consideration.</li>
         {
           Materialize.toast('Swipe left to view other questions', 3000);  
         }        
-
+	Materialize.toast('Click the dots below to view other questions', 3000);  
       }, 7000);
       // Materialize.toast('Swipe left to view all the questions', 10000);
     });
