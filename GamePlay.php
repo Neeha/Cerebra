@@ -65,7 +65,7 @@ if(isset($_SESSION['user']))
         {
           .contents
           {
-            font-size:18px;
+            font-size:16px;
 			max-height:250px;
           }
           .card-content
